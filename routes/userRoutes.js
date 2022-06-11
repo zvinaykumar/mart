@@ -19,3 +19,5 @@ router.get('/loggeduser', UserController.loggedUser)
 
 
 export default router
+
+

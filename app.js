@@ -4,6 +4,9 @@ import express from "express";
 import cors from "cors";
 import connectDB from "./config/connectdb.js";
 import userRoutes from "./routes/userRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import productRoutes from "./routes/productRouter.js";
+import brandRoutes from "./routes/brandRouter.js";
 
 const app = express();
 const port = process.env.PORT;
@@ -20,6 +23,9 @@ app.use(express.json());
 
 // Load Routes
 app.use("/api/user", userRoutes);
+app.use("/api/category", categoryRoutes);
+app.use("/api/brand", brandRoutes);
+app.use("/api/product", productRoutes);
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

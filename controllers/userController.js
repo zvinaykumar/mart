@@ -3,10 +3,11 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import transporter from "../config/emailConfig.js";
 
+
 class UserController {
   static userRegistration = async (req, res) => {
     const { name, email, password, password_confirmation, tc } = req.body;
-    const user = await UserModel.findOne({ email: email });
+    const user = await UserModel.findOne({ email: email }); 
     if (user) {
       res.send({ status: "failed", message: "Email already exists" });
     } else {

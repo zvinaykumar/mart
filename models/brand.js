@@ -1,28 +1,29 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-import config from "../config/config.js";
 
-const categorySchema = new Schema({
-  createdOn: { type: Date, default: Date.now },
-  delete: { type: Boolean, default: false },
-  active: { type: Boolean, default: true },
-  slug: { type: String, unique: true },
+const BrandSchema = new mongoose.Schema({
+  // categoryId: { type: String, unique: true, required: true },
+  // createdOn: { type: Date, default: Date.now },
+  // delete: { type: Boolean, default: false },
+  // active: { type: Boolean, default: true },
+
+  // slug: { type: String, unique: true },
   name: { type: String, required: true },
   longDescription: { type: String },
   shortDescription: { type: String },
   seoTitle: { type: String },
-  seoDescription: { type: String },
-  icon: { type: String },
-  image: { type: String },
-  type: { type: String, required: true },
-  tags: [String],
-  premiumSeller: [String],
-  featured: { type: Boolean, default: false },
-  form: { type: String },
-  childCategories: [
-    { type: mongoose.Schema.Types.ObjectId, ref: config.categoryCollection },
-  ],
-  
+  //   seoDescription: { type: String },
+  //   icon: { type: String },
+  // imageSquare: { type: String },
+  // imageRectangular: { type: String },
+  //   image: { type: String },
+  // type: { type: String, required: true },
+  // tags: [String],
+  // premiumSeller: [String],
+  // featured: { type: Boolean, default: false },
+  // form: { type: String },
+  // childCategories: [
+  //   { type: mongoose.Schema.Types.ObjectId, ref: config.categoryCollection },
+  // ],
   // parentCategory: {
   //   type: mongoose.Schema.Types.ObjectId,
   //   ref: config.categoryCollection,
@@ -52,10 +53,10 @@ const categorySchema = new Schema({
   //     order: { type: Number, default: 0 },
   //   },
   // ],
-  content: String,
-  showHtml: Boolean,
+  // content: String,
+  // showHtml: Boolean,
 });
 
-const Category = mongoose.model("categoryCollection", categorySchema);
+const Brand = mongoose.model("brandCollection", BrandSchema);
 
-export default Category;
+export default Brand;
